@@ -2,5 +2,15 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_144/bin/commons-configuration-1.10/commons-configuration-1.10.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_144/bin/commons-configuration-1.10/commons-configuration-1.10-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_144/bin/commons-configuration-1.10/commons-configuration-1.10-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_144/bin/commons-configuration-1.10/commons-configuration-1.10-tests.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_144/bin/commons-configuration-1.10/commons-configuration-1.10-test-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_144/bin/commons-lang-2.6/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_144/bin/commons-lang-2.6/commons-lang-2.6-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_144/bin/commons-lang-2.6/commons-lang-2.6-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_144/bin/commons-logging-1.2/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_144/bin/commons-logging-1.2/commons-logging-1.2-javadoc.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
