@@ -53,5 +53,28 @@ public interface DA_SK_RMI_Interface extends Remote{
 	
 	public void reset() throws RemoteException;
 	
+	/*
+	 * Start processing, implement token exchange
+	 */
+	
+	public void startProcessing () throws RemoteException;
+	
+	/*
+	 * Send request to other servers for token
+	 */
+	
+	public void requestToken() throws RemoteException;
+	
+	/*
+	 * Receive Token Request Message
+	 */
+	
+	public void receiveRequestMessage(Request_Message rm) throws RemoteException;
+	
+	/*
+	 * receive token from other server
+	 */
+	
+	public void receiveToken(Token_Message tm) throws RemoteException;
 
 }
