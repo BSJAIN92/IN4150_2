@@ -192,6 +192,21 @@ public class DA_SK_RMI extends UnicastRemoteObject implements DA_SK_RMI_Interfac
 		
 		requestToken();
 		
+		waitToken();
+		
+		criticalSection();
+		
+		leaveToken();
+		
+		try{
+			Thread.sleep(delay);
+			
+		}	catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		processExecutionFlag = true;
+		
 	}
 	
 	/*
@@ -280,5 +295,55 @@ public class DA_SK_RMI extends UnicastRemoteObject implements DA_SK_RMI_Interfac
 	public void receiveToken(Token_Message tm) {
 		token =  tm.getToken();
 	}
+	
+	/*
+	 * wait to receive token
+	 */
+	
+	public void waitToken() {
+		while (token == null) {
+			try{
+				Thread.sleep(100);;
+			}	catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
+	/*
+	 * Random sleep to emulate critical section
+	 */
+	
+	public void criticalSection() {
+		criticalSectionFlag = true;
+		
+		try {
+			Thread.sleep(100);
+		}	catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		criticalSectionFlag = false;
+	}
+	
+	private void leaveToken() {
+		//Update token clock
+		token.getTokenClock().set(serverIndex, clock.get(serverIndex));
+		
+		//search for server requesting access to token
+		
+		for (int i = 0; i < totalServers; i++) {
+			if(i == serverIndex) {
+				continue;
+			}
+			
+			if (clock.get(i) > token.getTokenClock().get(i)) {
+				sendToken(urls[i]);
+				break;
+			}
+		}
+	}
+	
 
 }

@@ -72,6 +72,21 @@ public class Unit_Test {
 		
 		try {
 			
+			Token token = Token.activateToken(4);
+			Token_Message tm = new Token_Message("", 0, token);
+			server1.receiveToken(tm);
+			
+			server1.startProcessing();
+			server2.startProcessing();
+			server3.startProcessing();
+			server4.startProcessing();
+			
+			Thread.sleep(10000);
+			
+			Assert.assertTrue(server1.getProcessExecutionFlag());
+			Assert.assertTrue(server2.getProcessExecutionFlag());
+			Assert.assertTrue(server3.getProcessExecutionFlag());
+			Assert.assertTrue(server4.getProcessExecutionFlag());
 			
 		}	catch (Exception e) {
 			e.printStackTrace();

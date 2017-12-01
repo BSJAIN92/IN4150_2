@@ -76,5 +76,17 @@ public interface DA_SK_RMI_Interface extends Remote{
 	 */
 	
 	public void receiveToken(Token_Message tm) throws RemoteException;
+	
+	/*
+	 * wait to receive token
+	 */
+	
+	public void waitToken() throws RemoteException;
+	
+	/*
+	 * Random sleep to emulate critical section
+	 */
+	
+	public void criticalSection() throws RemoteException;
 
 }
